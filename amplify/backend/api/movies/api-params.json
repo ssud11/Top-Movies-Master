@@ -21,6 +21,13 @@
             "privacy": {
                 "open": true
             }
+        },
+        {
+            "name": "/mymovies2",
+            "lambdaFunction": "mymovies2",
+            "privacy": {
+                "open": true
+            }
         }
     ],
     "resourceName": "movies",
@@ -34,6 +41,9 @@
         },
         {
             "lambdaFunction": "movieByCountry"
+        },
+        {
+            "lambdaFunction": "mymovies2"
         }
     ],
     "privacy": {
@@ -66,7 +76,15 @@
                 "Name",
                 "Arn"
             ]
+        },
+        {
+            "category": "function",
+            "resourceName": "mymovies2",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
         }
     ],
-    "uuid": "bcebecaf"
+    "uuid": "c0c5aeff"
 }

@@ -33,12 +33,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "mymovies",
+            "mymovies2",
             {
               "Fn::Join": [
                 "",
                 [
-                  "mymovies",
+                  "mymovies2",
                   "-",
                   {
                     "Ref": "env"
@@ -69,7 +69,7 @@
         "Timeout": "25",
         "Code": {
           "S3Bucket": "amplify-topmoviesmaster-dev-182523-deployment",
-          "S3Key": "amplify-builds/mymovies-2b5935765a5a72797675-build.zip"
+          "S3Key": "amplify-builds/mymovies2-63362b622b43526c7832-build.zip"
         }
       }
     },
@@ -79,12 +79,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "topmoviesmasterLambdaRole3a072fb3",
+            "topmoviesmasterLambdaRoleec41b4df",
             {
               "Fn::Join": [
                 "",
                 [
-                  "topmoviesmasterLambdaRole3a072fb3",
+                  "topmoviesmasterLambdaRoleec41b4df",
                   "-",
                   {
                     "Ref": "env"

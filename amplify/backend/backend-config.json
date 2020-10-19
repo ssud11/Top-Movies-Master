@@ -17,6 +17,12 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
       "dependsOn": []
+    },
+    "mymovies2": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": []
     }
   },
   "api": {
@@ -43,6 +49,14 @@
         {
           "category": "function",
           "resourceName": "movieByCountry",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "mymovies2",
           "attributes": [
             "Name",
             "Arn"

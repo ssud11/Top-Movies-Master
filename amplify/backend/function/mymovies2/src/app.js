@@ -7,8 +7,8 @@ See the License for the specific language governing permissions and limitations 
 */
 
 
-var axios = require('axios');
 const publicIp = require("react-public-ip");
+var axios = require('axios');
 var express = require('express')
 var bodyParser = require('body-parser')
 var awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
@@ -30,62 +30,70 @@ app.use(function(req, res, next) {
  * Example get method *
  **********************/
 
-API.get('/mymovies', async function(res) {
-  const ipv4 = await publicIp.v4() || "";
+app.get('/mymovies2', function(req, res) {
+  var ipv4 = "";
+  (async function () {
+   ipv4 = await publicIp.v4() || "";
+  })();
   axios
-  .get(
-    `http://ip-api.com/json/${ipv4}`
-  ).then(data => {
-    console.log(`http://ip-api.com/json/${ipv4}`);
-    console.log(data.data);
+    .get(
+      `http://ip-api.com/json/${ipv4}`
+    ).then(data => {
+      console.log(`http://ip-api.com/json/${ipv4}`);
+      console.log(data.data);
 
-    var country = data.data.countryCode;
+      var country = data.data.countryCode;
 
-    axios
-      .get(
-        `https://api.themoviedb.org/3/movie/top_rated?api_key=196a5e62d61a85e1a4d7aa52c237c10d&region=${country}`
-      )
-      .then(resp => {
-        console.log(`https://api.themoviedb.org/3/movie/top_rated?api_key=196a5e62d61a85e1a4d7aa52c237c10d&region=${country}`);
-        console.log(resp);
-      })
-      .catch((function (err) {
-        console.log(err);
-      })
-      );
-  })
-  res.json({success: 'get call succeed!', url: req.url, body: resp.data.results});
+      axios
+        .get(
+          `https://api.themoviedb.org/3/movie/top_rated?api_key=196a5e62d61a85e1a4d7aa52c237c10d&region=${country}`
+        )
+        .then(resp => {
+          console.log(`https://api.themoviedb.org/3/movie/top_rated?api_key=196a5e62d61a85e1a4d7aa52c237c10d&region=${country}`);
+          console.log(resp);
+
+          res.json({success: 'get call succeed!', url: req.url, body: resp.data.results});
+
+
+
+        })
+        .catch((function (err) {
+          console.log(err);
+        })
+        );
+    })
+ 
 });
 
-// app.get('/mymovies/*', function(req, res) {
-//   // Add your code here
-//   res.json({success: 'get call succeed!', url: req.url});
-// });
+app.get('/mymovies2/*', function(req, res) {
+  // Add your code here
+  res.json({success: 'get call succeed!', url: req.url});
+});
 
 /****************************
 * Example post method *
 ****************************/
 
-app.post('/mymovies', function(req, res) {
+app.post('/mymovies2', function(req, res) {
   // Add your code here
   res.json({success: 'post call succeed!', url: req.url, body: req.body})
 });
 
-// app.post('/mymovies/*', function(req, res) {
-//   // Add your code here
-//   res.json({success: 'post call succeed!', url: req.url, body: req.body})
-// });
+app.post('/mymovies2/*', function(req, res) {
+  // Add your code here
+  res.json({success: 'post call succeed!', url: req.url, body: req.body})
+});
 
 /****************************
 * Example put method *
 ****************************/
 
-app.put('/mymovies', function(req, res) {
+app.put('/mymovies2', function(req, res) {
   // Add your code here
   res.json({success: 'put call succeed!', url: req.url, body: req.body})
 });
 
-app.put('/mymovies/*', function(req, res) {
+app.put('/mymovies2/*', function(req, res) {
   // Add your code here
   res.json({success: 'put call succeed!', url: req.url, body: req.body})
 });
@@ -94,12 +102,12 @@ app.put('/mymovies/*', function(req, res) {
 * Example delete method *
 ****************************/
 
-app.delete('/mymovies', function(req, res) {
+app.delete('/mymovies2', function(req, res) {
   // Add your code here
   res.json({success: 'delete call succeed!', url: req.url});
 });
 
-app.delete('/mymovies/*', function(req, res) {
+app.delete('/mymovies2/*', function(req, res) {
   // Add your code here
   res.json({success: 'delete call succeed!', url: req.url});
 });
