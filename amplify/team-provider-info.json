@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-topmoviesmaster-dev-182523-authRole",
+      "UnauthRoleArn": "arn:aws:iam::222837554032:role/amplify-topmoviesmaster-dev-182523-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::222837554032:role/amplify-topmoviesmaster-dev-182523-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-topmoviesmaster-dev-182523-deployment",
+      "UnauthRoleName": "amplify-topmoviesmaster-dev-182523-unauthRole",
+      "StackName": "amplify-topmoviesmaster-dev-182523",
+      "StackId": "arn:aws:cloudformation:us-east-2:222837554032:stack/amplify-topmoviesmaster-dev-182523/19516e70-1113-11eb-9d56-060a435a9e52",
+      "AmplifyAppId": "d37u991muehhwj"
+    }
+  }
+}

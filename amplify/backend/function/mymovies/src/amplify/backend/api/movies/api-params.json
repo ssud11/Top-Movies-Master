@@ -1,0 +1,72 @@
+{
+    "paths": [
+        {
+            "name": "/movies",
+            "lambdaFunction": "findAll",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/movies"
+        },
+        {
+            "name": "/movieBy/{country}",
+            "lambdaFunction": "movieByCountry",
+            "privacy": {
+                "open": true
+            }
+        },
+        {
+            "name": "/mymovies",
+            "lambdaFunction": "mymovies",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "movies",
+    "apiName": "movies",
+    "functionArns": [
+        {
+            "lambdaFunction": "findAll"
+        },
+        {
+            "lambdaFunction": "movieByCountry"
+        },
+        {
+            "lambdaFunction": "mymovies"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-topmoviesmaster-dev-182523-authRole",
+        "unAuthRoleName": "amplify-topmoviesmaster-dev-182523-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "findAll",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "movieByCountry",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "mymovies",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ],
+    "uuid": "176c85ec"
+}
